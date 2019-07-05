@@ -17,6 +17,6 @@ pipeline {
             steps{
                 sh 'nohup java -jar $WORKSPACE/application_${GIT_BRANCH##*/}.jar &'
 	          }
-	      }
+	}
     }
 }
