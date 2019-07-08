@@ -15,6 +15,7 @@ pipeline {
         }
         stage ('Deploy App'){
             steps{
+		sh 'echo deploystarted'
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar application_${GIT_BRANCH##*/}.jar &'
 	          }
 	      }
