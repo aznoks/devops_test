@@ -15,7 +15,7 @@ pipeline {
         }
         stage ('Deploy App'){
             steps{
-                sh "nohup java -jar application_$/{GIT_BRANCH##*//}.jar &"
+                sh "nohup java -jar application_\${GIT_BRANCH##*/}.jar &"
 	          }
 	      }
     }
