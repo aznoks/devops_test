@@ -15,7 +15,7 @@ pipeline {
         }
         stage ('Deploy App'){
             steps{
-                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jarnohup java -jar application_${GIT_BRANCH##*/}.jar &'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar application_${GIT_BRANCH##*/}.jar &'
 	          }
 	      }
     }
