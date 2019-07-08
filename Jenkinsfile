@@ -15,6 +15,7 @@ pipeline {
         }
         stage ('Deploy App'){
             steps{
+		sh 'export BUILD_ID=dontKillMe'
                 sh 'nohup java -jar application_${GIT_BRANCH##*/}.jar &'
 	          }
 	      }
