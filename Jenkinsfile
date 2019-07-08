@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Build'){
             steps {
-                sh "mvn clean install"
+                sh 'mvn clean install'
             }
             post {
                 success {
@@ -15,7 +15,7 @@ pipeline {
         }
         stage ('Deploy App'){
             steps{
-                sh "nohup java -jar application_\${GIT_BRANCH##*/}.jar &"
+                sh 'nohup java -jar application_${GIT_BRANCH##*/}.jar &'
 	          }
 	      }
     }
