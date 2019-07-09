@@ -22,6 +22,7 @@ pipeline {
 
         stage ('Deploy from Dev branch'){
             when {
+                branch 'develop'
                 expression { params.APP_VERSION == 'dev' }
             }
             steps{
@@ -67,3 +68,4 @@ pipeline {
         }
     }
 }
+
