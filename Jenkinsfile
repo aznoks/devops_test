@@ -22,7 +22,6 @@ pipeline {
 
         stage ('Deploy from Dev branch'){
             when {
-                branch 'develop'
                 expression { params.APP_VERSION == 'dev' }
             }
             steps{
@@ -62,7 +61,6 @@ pipeline {
                 }
             }
             steps {
-		println checkValue
 		sh 'pkill -9 -f \'application_\' || true'
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar application_master.jar &'
             }
