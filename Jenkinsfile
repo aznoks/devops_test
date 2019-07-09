@@ -62,7 +62,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'pkill -9 -f \'application_\' || true'
+		println checkValue
+		sh 'pkill -9 -f \'application_\' || true'
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar application_master.jar &'
             }
         }
