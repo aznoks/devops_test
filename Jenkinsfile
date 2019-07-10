@@ -30,7 +30,6 @@ pipeline {
 
         stage ('Deploy from Dev branch'){
             when {
-                branch "develop"
                 expression { params.APP_VERSION == 'dev' }
             }
             steps{
@@ -41,7 +40,7 @@ pipeline {
 
         stage ('Check App Availability'){
           when {
-            branch "develop"
+              expression { params.APP_VERSION == 'dev' }
           }
           steps{
               script{
@@ -58,7 +57,6 @@ pipeline {
 
         stage ('Deploy from Master branch'){
           when {
-              branch "master"
               expression { params.APP_VERSION == 'master' }
           }
             steps {
