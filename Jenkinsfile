@@ -7,9 +7,15 @@ pipeline {
           name: 'APP_VERSION')
     }
 	
-    checkValue = false	
-
     stages{
+	stage('Define variable') {
+	    steps {
+                script {
+	    	    checkValue = false
+		}
+	    }
+	}
+	    
         stage('Build'){
             steps {
                 sh 'mvn clean install'
