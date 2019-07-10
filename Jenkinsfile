@@ -11,7 +11,7 @@ pipeline {
 	stage('Define variable') {
 	    steps {
                 script {
-	    	    checkValue = false
+	    	    checkValue = true
 		}
 	    }
 	}
