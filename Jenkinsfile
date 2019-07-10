@@ -30,10 +30,8 @@ pipeline {
 
         stage ('Deploy from Dev branch'){
             when {
-              allOf{
                 branch "develop"
                 expression { params.APP_VERSION == 'dev' }
-              }
             }
             steps{
                 sh 'pkill -9 -f \'application_\' || true'
@@ -60,10 +58,8 @@ pipeline {
 
         stage ('Deploy from Master branch'){
           when {
-            allOf{
               branch "master"
               expression { params.APP_VERSION == 'master' }
-            }
           }
             steps {
                 sh 'pkill -9 -f \'application_\' || true'
