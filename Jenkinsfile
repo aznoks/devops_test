@@ -6,6 +6,8 @@ pipeline {
           description: '',
           name: 'APP_VERSION')
     }
+	
+    checkValue = false	
 
     stages{
         stage('Build'){
