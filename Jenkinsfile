@@ -15,7 +15,7 @@ pipeline {
             post {
                 success {
                   sh 'mv $WORKSPACE/target/*.jar $WORKSPACE/target/application_${GIT_BRANCH##*/}.jar'
-                  sh 'curl -H \'X-JFrog-Art-Api:AKCp5dKPYYsuHmMuSGgXouBiZRgLxgQbRdMEx8tdbJYtY8tRnDhker734SX6V2yuNaXQAnPMc\' -T application_${GIT_BRANCH##*/}.jar http://localhost:8081/artifactory/jenkins-integration/'
+                  sh 'curl -H \'X-JFrog-Art-Api:AKCp5dKPYYsuHmMuSGgXouBiZRgLxgQbRdMEx8tdbJYtY8tRnDhker734SX6V2yuNaXQAnPMc\' -T target/application_${GIT_BRANCH##*/}.jar http://localhost:8081/artifactory/jenkins-integration/'
                 }
             }
         }
