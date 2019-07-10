@@ -22,7 +22,7 @@ pipeline {
 
         stage ('Deploy from Dev branch'){
             when {
-              allof{
+              allOf{
                 branch "develop"
                 expression { params.APP_VERSION == 'dev' }
               }
@@ -52,7 +52,7 @@ pipeline {
 
         stage ('Deploy from Master branch'){
           when {
-            allof{
+            allOf{
               branch "master"
               expression { params.APP_VERSION == 'master' }
             }
